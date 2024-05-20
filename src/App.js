@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import CustomWebcam from './CustomWebcam';
 import './App.css';
 import Feed from './Feed';
@@ -22,14 +22,10 @@ function App() {
             </ul>
           </nav>
         </header>
-        <Switch>
-          <Route path="/upload">
-            <UploadEdit />
-          </Route>
-          <Route path="/">
-            <Feed />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/upload" element={<UploadEdit />} />
+          <Route path="/" element={<Feed />} />
+        </Routes>
       </div>
     </Router>
   );
