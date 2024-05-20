@@ -30,7 +30,28 @@ const DrawingCanvas = ({ imgSrc }) => {
     }
   }, [canvas, imgSrc]);
 
-  return <canvas ref={canvasRef} />;
+  // Add saveImage function
+  const saveImage = () => {
+    const dataURL = canvas.toDataURL({ format: 'png', quality: 0.8 });
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'edited_photo.png';
+    link.click();
+  };
+
+  return (
+    <div>
+      <canvas ref={canvasRef} />
+      <div className="flex justify-center mt-4">
+        <button
+          onClick={saveImage}
+          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700"
+        >
+          Save Photo
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default DrawingCanvas;
