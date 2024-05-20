@@ -1,5 +1,6 @@
 import React, { useRef, useState, useCallback } from 'react';
 import Webcam from 'react-webcam';
+import DrawingCanvas from './DrawingCanvas';
 
 const CustomWebcam = () => {
   const webcamRef = useRef(null);
@@ -13,7 +14,7 @@ const CustomWebcam = () => {
   return (
     <div className="container mx-auto p-4">
       {imgSrc ? (
-        <img src={imgSrc} alt="Captured" className="mx-auto" />
+        <DrawingCanvas imgSrc={imgSrc} />
       ) : (
         <Webcam
           audio={false}
