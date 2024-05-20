@@ -20,7 +20,7 @@ const CustomWebcam = () => {
           audio={false}
           ref={webcamRef}
           screenshotFormat="image/jpeg"
-          className="mx-auto"
+          className="mx-auto rounded-lg shadow-md"
         />
       )}
       <div className="flex justify-center mt-4">

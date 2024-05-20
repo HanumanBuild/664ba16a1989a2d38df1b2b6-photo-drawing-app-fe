@@ -30,7 +30,6 @@ const DrawingCanvas = ({ imgSrc }) => {
     }
   }, [canvas, imgSrc]);
 
-  // Add saveImage function
   const saveImage = () => {
     const dataURL = canvas.toDataURL({ format: 'png', quality: 0.8 });
     const link = document.createElement('a');
@@ -41,7 +40,7 @@ const DrawingCanvas = ({ imgSrc }) => {
 
   return (
     <div>
-      <canvas ref={canvasRef} />
+      <canvas ref={canvasRef} className="border rounded-lg shadow-md" />
       <div className="flex justify-center mt-4">
         <button
           onClick={saveImage}
