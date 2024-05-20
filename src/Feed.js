@@ -20,7 +20,7 @@ const Feed = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map(image => (
           <div key={image._id} className="bg-white shadow-md rounded-lg p-4">
-            <img src={`data:${image.imageType};base64,${Buffer.from(image.imageData).toString('base64')}`} alt={image.imageName} className="w-full h-auto" />
+            <img src={`data:${image.imageType};base64,${Buffer.from(image.imageData).toString('base64')}`} alt={image.imageName} className="w-full h-auto rounded-lg" />
             <p className="mt-2 text-gray-700">{image.caption}</p>
           </div>
         ))}
